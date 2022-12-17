@@ -14,9 +14,13 @@ public class Main {
         selectionAppVersion(deviseOS, deviseYear);
 
         //task 3: determine the delivery time
-        int deliveryDistance = 15;
-        countDayDelivery(deliveryDistance);
-
+        int deliveryDistance = 78;
+        int deliveryTime = countDayDelivery(deliveryDistance);
+        if (deliveryTime > 0) {
+            System.out.println("the delivery time: " + deliveryTime + " day.");
+        } else {
+            System.out.println("no delivery!");
+        }
     }
 
     public static void checkLeapYear(int year) {
@@ -46,15 +50,15 @@ public class Main {
         }
     }
 
-    public static void countDayDelivery(int distance) {
+    public static int countDayDelivery(int distance) {
         if (distance <= 20) {
-            System.out.println("delivery - one day");
+            return 1;
         } else if (distance > 20 && distance <= 60) {
-            System.out.println("delivery - two day");
+            return 2;
         } else if (distance > 60 && distance <= 100) {
-            System.out.println("delivery - three day");
+            return 3;
         } else {
-            System.out.println("no delivery");
+            return -1;
         }
     }
 
